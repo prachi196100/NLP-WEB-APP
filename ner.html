@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NER</title>
+</head>
+<body>
+<form  action="/perform_ner" method="post">
+    <label> TYPE YOUR TEXT HERE</label><br>
+    <textarea name="ner_text"></textarea><br>
+    <input type="submit" value="Perform NER">
+
+
+    {% if response %} <!-- Aa result app.py mathi lai ne print karse -->
+
+    {% for i in response['entities']: %}  <!-- Response aaya aavse-->
+        <p> i['name'] +"==> "+ i['category'] }} </p>
+    <p>{{ result }}</p>
+    {% endif %}
+
+
+</form>
+</body>
+</html>
